@@ -1,6 +1,6 @@
 var CalculatorPage = require('./pages/calculator.page.js');
 
-describe('Protractor dema calculator', () => {
+describe('Protractor demo calculator', () => {
     let page = new CalculatorPage();
 
     beforeEach( async () => {
@@ -12,7 +12,7 @@ describe('Protractor dema calculator', () => {
         expect(await page.getResult()).toEqual('7');
     });
 
-    it('Should substract properly', async () => {
+    it('Should subtract properly', async () => {
         await page.sub(10, 7);
         expect(await page.getResult()).toEqual('3');
     });
