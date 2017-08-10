@@ -1,4 +1,4 @@
-var Select = require('./components/select.page.js');
+var Select = require('./wrappers/select.wrapper.js');
 
 function CalculatorPage() {
     var firstElement = element(by.model('first'));
@@ -54,31 +54,26 @@ function CalculatorPage() {
     }
 
 
-    this.selectAddOperator = async() => {
-        await operators.click();        
-        await operators.selectByValue('ADDITION').click();
+    this.selectAddOperator = async() => {      
+        await operators.selectByValue('ADDITION');
     }
 
     this.selectSubOperator = async() => {
-        await operators.click();
-        await operators.selectByValue('SUBTRACTION').click();
+        await operators.selectByKey('-');
         // await browser.wait(EC.presenceOf(element(by.css('.ng-touched')), 3000));
     }
 
     this.selectMulOperator = async() => {
-        await operators.click();
-        await operators.selectByValue('MULTIPLICATION').click();
+        await operators.selectByValue('MULTIPLICATION');
         // await browser.wait(EC.textToBePresentInElementValue(operators, 'MULTIPLICATION'), 1000);
     }
 
     this.selectDivOperator = async() => {
-        await operators.click();
-        await operators.selectByValue('DIVISION').click();
+        await operators.selectByPartialText('/');
     }
 
     this.selectModOperator = async() => {
-        await operators.click();
-        await operators.selectByValue('MODULO').click();
+        await operators.selectByText('%');
     }
 }
 
