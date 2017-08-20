@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "protractor protractor.conf.js",
+    "protractor": "protractor",
+    "elementor": "elementor https://angularjs.org",
+    "wd-start": "webdriver-manager start",
+    "wd-update": "webdriver-manager update"
   },
   "keywords": [
     "protractor",
@@ -15,6 +19,8 @@
   "author": "svillegasz@psl.com.co",
   "license": "MIT",
   "devDependencies": {
+    "elementor": "^2.1.0",
+    "protractor": "^5.1.2",
     "protractor-e2e-coverage": "^1.3.0"
   }
 }
